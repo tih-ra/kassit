@@ -1,0 +1,9 @@
+<% if @layout: %>
+div 'Header'
+div (id: '<%= @layout %>'), ->
+    h1 'Placeholder Content'
+div 'Footer'
+<% else: %>
+div ->
+    h1 'Welcome! Start editing this template'
+<% end %>

@@ -1,0 +1,17 @@
+{
+    "name": "<%= @app %>"
+,   "description": ""
+,   "author": ""
+,   "version": "0.0.1"
+,   "licenses": []
+,   "repository": {}
+,   "main": ""
+,   "bin": {}
+,   "dependencies": {
+        "kassit":">=<%= @ver %>"    
+    }
+,   "devDependencies": {}
+,   "engines": {
+        "node": "~0.4"
+    }
+}

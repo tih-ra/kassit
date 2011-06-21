@@ -1,0 +1,21 @@
+{
+    "client": [
+        { "url": "lib/jquery.js" }
+,       { "url": "lib/underscore.js" }
+,       { "url": "lib/backbone.js" }
+,       { "url": "lib/coffeekup.js", "method": "squeeze" }
+,       { "url": "lib/ejs.js" }
+,       { "url": "lib/kassit.coffee"}
+
+,       { "url": "client.coffee" }
+
+,       { "url": "templates/root/layout.kup" }
+,       { "url": "templates/root/index.kup" }
+,       { "url": "views/root_view.coffee" }
+,       { "url": "controllers/root_controller.coffee" }
+,       { "url": "style/master.less" }
+    ]
+,   "server": [
+        { "url": "server.coffee" }
+    ]
+}
