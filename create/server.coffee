@@ -1,6 +1,6 @@
 express = require('express')
 app = <%= @app %> = process['<%= @app %>'] = express.createServer()
-app.mode = getMode()
+app.mode = if !(getMode?()) then 'prod' else getMode()
 app.port = 3000
 
 app.use(express.bodyParser())

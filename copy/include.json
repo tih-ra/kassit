@@ -4,7 +4,6 @@
 ,       { "url": "lib/underscore.js" }
 ,       { "url": "lib/backbone.js" }
 ,       { "url": "lib/coffeekup.js", "method": "squeeze" }
-,       { "url": "lib/ejs.js" }
 ,       { "url": "lib/kassit.coffee"}
 
 ,       { "url": "client.coffee" }

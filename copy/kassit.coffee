@@ -8,6 +8,6 @@ class Kassit.Template.EJS
         
 class Kassit.Template.KUP
     constructor: (json) ->
-        @kup = eval(json)
+        @kup = json
     render: (data = {}, helpers = {}) ->
         return CoffeeKup.render(@kup,{context: data, locals: helpers})

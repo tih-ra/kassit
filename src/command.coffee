@@ -38,7 +38,7 @@ parseApp = ->
 setOptions = ->
     if !app
         newoptions = [
-            (switch: '--application', match: /^[A-z]/ , eval: 'generator.application(param)'    , show: 'creates .[APP]/package.json')]
+            (switch: '--application', match: /^[A-z]/ , eval: 'generator.application(param)'    , show: 'creates ./[APP]')]
         options.push(opt) for opt in newoptions
     else
         appoptions = [
@@ -57,6 +57,7 @@ setOptions = ->
         options.push(opt) for opt in appoptions
 
     genoptions = [
+        (space: true)
         (switch: '--version', match: '--null', eval: 'printVersion()', show: 'display Kassits version')]
     options.push(opt) for opt in genoptions
     

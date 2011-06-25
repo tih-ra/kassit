@@ -1,8 +1,8 @@
 {
     "name": "kassit"
-,   "description": "Kassit - a CoffeeScript written web-framework based on Backbone & Express"
+,   "description": "Kassit - Metaframework for rapid building of AJAX client-side WebApplications"
 ,   "author": "Amit Marcus"
-,   "version": "0.1.0"
+,   "version": "0.1.1"
 ,   "licenses": [
         {
             "type": "MIT"

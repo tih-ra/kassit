@@ -29,6 +29,15 @@ copy = (param) ->
     catch err
         console.log "  ::error: from: #{param.from}, to: #{param.to}"
         throw err
+    
+subfolder = (param) ->
+    param.at = "#{folder}/#{param.at}" if folder
+    writer.mkDir param.at, (err) ->
+        if !err
+            console.log "  ::created: #{param.at}"
+        else
+            console.log "  ::error: can't create folder #{param.at}"
+            throw err
 
 # PUBLIC METHODS
 @application = (app) ->
@@ -87,10 +96,6 @@ copy = (param) ->
         to: 'client/lib/coffeekup.js'
         
     copy
-        from: 'ejs.js'
-        to: 'client/lib/ejs.js'
-    
-    copy
         from: 'kassit.coffee'
         to: 'client/lib/kassit.coffee'
             
@@ -109,6 +114,15 @@ copy = (param) ->
     @template('Root/Layout')
     @template('Root/Index')
     @controller(app,'Root')
+    
+    subfolder
+        at: 'client/collections'
+    
+    subfolder
+        at: 'client/models'
+    
+    subfolder
+        at: 'static'
                 
 @model = (app, model) ->
     model = inflect.camelize(model)
@@ -118,6 +132,7 @@ copy = (param) ->
         data:
             app: app
             model: model
+            url: inflect.underscore(inflect.pluralize(model))
 
 @collection = (app, model) ->
     model = inflect.camelize(model)
