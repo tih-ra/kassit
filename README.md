@@ -187,9 +187,9 @@
   
   url:  
     accepted file types:  
-      scripts:    *.js, [*.coffee](http://jashkenas.github.com/coffee-script/)  
-      styles:     *.css, [*.less](http://lesscss.org/)  
-      templates:  [*.kup](http://coffeekup.org/)  
+      scripts:    js, [coffee](http://jashkenas.github.com/coffee-script/)  
+      styles:     css, [less](http://lesscss.org/)  
+      templates:  [kup](http://coffeekup.org/)  
       
   method:  
     this is the build method. default is 'mangle'. using [UglifyJS](https://github.com/mishoo/UglifyJS)  
@@ -205,7 +205,7 @@
   the order of the files in include.json is important!  
   if backbone.js depends upon jquery.js and underscore.js then you must put them in order.  
   recommended order (worked for me all the time...)  
-    lib/*, client.coffee, models/*, collections/*, templates/*, views/*, controllers/* and then style/*  
+    lib/, client.coffee, models/, collections/, templates/, views/, controllers/ and then style/  
   
   -------------
   package.json:  
