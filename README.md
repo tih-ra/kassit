@@ -1,6 +1,6 @@
 # Kassit
 
-  Metaframework for rapid building of AJAX client-side WebApplications  
+  Rapid Client-Side AJAX Applications Development Framework
   mainly built and depends on [Node.JS](http://nodejs.org), [CoffeeScript](http://jashkenas.github.com/coffee-script/) and [Backbone](http://http://documentcloud.github.com/backbone/)
   
   Kassit is named after a popular 70's coffeeshop in Tel-Aviv (knowned as a gathering place for intellectuals - mostly poets)
@@ -10,12 +10,12 @@
   in order to use Kassit you need to install it globaly.  
   you can do so by typing (ofcourse you must have [npm](http://npmjs.org/) installed)
     
-    $ npm install -g coffee-script walk uglify-js inflect eco less express
     $ npm install -g kassit
 
-  you might need to run those commands a couple of times.  
+  note for windows users: you might need to run this command a couple of times.  
   i think thats due an error in npm and because those packages has number of dependencies.  
   in the end it works.
+  
   
 ## Quick Start
 
@@ -59,8 +59,6 @@
     first_app/
         client/
             collections/
-            controllers/
-                root_controller.coffee
             lib/
                 backbone.js
                 coffeekup.js
@@ -68,6 +66,8 @@
                 kassit.coffee
                 underscore.js
             models/
+            routers/
+                root_router.coffee
             style/
                 master.less
             templates/
@@ -109,10 +109,10 @@
   generates a template.  
   'client/templates/menu/layout.kup' for Menu/Layout as [VIEW/TMPL]
   
-    $ kassit --controller [CTRL]
+    $ kassit --router [ROUTER]
     
-  generates a controller.  
-  'client/controllers/menu_controller.coffee for Menu as [CTRL]
+  generates a router.  
+  'client/routers/menu_router.coffee for Menu as [ROUTER]
   
     $ kassit --restful [MODEL]
     
@@ -121,7 +121,7 @@
   
     $ kassit --scaffold [MODEL]
     
-  generates a complete Model/Collection/View/Templates/Restful files.  
+  generates a complete Model/Collection/View/Templates/Router/Restful files.  
   example using Latte as [MODEL]:
   
     'client/models/latte.coffee'
@@ -129,7 +129,7 @@
     'client/views/lattes_view.coffee'
     'client/templates/lattes/layout.kup'
     'client/templates/lattes/index.kup'
-    'client/controllers/lattes_controller.coffee'
+    'client/router/lattes_router.coffee'
     'server/lattes.coffee'
   
   these switches can come combined... for ex:
@@ -205,7 +205,7 @@
   the order of the files in include.json is important!  
   if backbone.js depends upon jquery.js and underscore.js then you must put them in order.  
   recommended order (worked for me all the time...)  
-    lib/, client.coffee, models/, collections/, templates/, views/, controllers/ and then style/  
+    lib/, client.coffee, models/, collections/, templates/, views/, routers/ and then style/  
   
   -------------
   package.json:  

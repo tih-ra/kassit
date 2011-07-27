@@ -33,16 +33,16 @@ writer = require('kassit/lib/writer')
                   
             [data, ext] = c_inst.doProdRaw("#{env}/#{url}")
             scripts.push(uglifier[method](data,except)) if ext is 'js'
-            styles.push(data) if ext is 'css'
+            styles.push(uglifier.css(data)) if ext is 'css'
     
         # writing the production script
-        writer.writeFile prodjs, scripts.join(';'), (err) ->
-            if err then console.log "  ::error: #{prodjs}" else console.log "  ::compiled: #{prodjs}"
+        if scripts.length
+            writer.writeFile prodjs, scripts.join(';'), (err) ->
+                if err then console.log "  ::error: #{prodjs}" else console.log "  ::compiled: #{prodjs}"
     
-        if env is 'client'
-            # writing the production css        
-            (new (less.Parser)).parse styles.join(''), (err, tree) => data = (tree.toCSS({compress: true})).replace(/\n/g,' ')
-            writer.writeFile prodcss, data, (err) ->
+        # writing the production css
+        if (env is 'client') and (styles.length)
+            writer.writeFile prodcss, styles.join(' '), (err) ->
                 if err then console.log "  ::error: #{prodcss}" else console.log "  ::compiled: #{prodcss}"
     
     console.log '\n'

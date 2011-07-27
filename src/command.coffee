@@ -46,9 +46,9 @@ setOptions = ->
             (switch: '--collection' , match: /^[A-z]/ , eval: 'generator.collection(app,param)' , show: 'creates ./client/collections/[MODEL]s.coffee')
             (switch: '--view'       , match: /^[A-z]/ , eval: 'generator.view(app,param)'       , show: 'creates ./client/views/[VIEW]_view.coffee')
             (switch: '--template'   , match: /^[A-z]/ , eval: 'generator.template(param)'       , show: 'creates ./client/templates/[VIEW/TMPL].kup')
-            (switch: '--controller' , match: /^[A-z]/ , eval: 'generator.controller(app,param)' , show: 'creates ./client/controllers/[CTRL]_controller.coffee')
+            (switch: '--router'     , match: /^[A-z]/ , eval: 'generator.router(app,param)'     , show: 'creates ./client/routers/[ROUTER]_router.coffee')
             (switch: '--restful'    , match: /^[A-z]/ , eval: 'generator.restful(app,param)'    , show: 'creates ./server/[MODEL]s.coffee')
-            (switch: '--scaffold'   , match: /^[A-z]/ , eval: 'generator.scaffold(app,param)'   , show: 'scaffolds Model/View/Controller/Restful')
+            (switch: '--scaffold'   , match: /^[A-z]/ , eval: 'generator.scaffold(app,param)'   , show: 'scaffolds Model/View/Router/Restful')
             (space: true)
             (switch: '--watch'      , match: '--null' , eval: 'service.watch(app)'              , show: 'watches the project for changes. required while developing')
             (switch: '--build'      , match: '--null' , eval: 'service.build(app)'              , show: 'builds a minified production version')]

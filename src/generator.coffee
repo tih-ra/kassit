@@ -113,7 +113,7 @@ subfolder = (param) ->
     @view(app, 'Root')
     @template('Root/Layout')
     @template('Root/Index')
-    @controller(app,'Root')
+    @router(app,'Root')
     
     subfolder
         at: 'client/collections'
@@ -174,15 +174,15 @@ subfolder = (param) ->
         data:
             layout: (if layout then inflect.underscore(view) else false)
 
-@controller = (app, ctrl) ->
-    ctrl = inflect.camelize(ctrl)
+@router = (app, router) ->
+    router = inflect.camelize(router)
     create
-        from: 'controller.coffee'
-        to: "client/controllers/#{inflect.underscore(ctrl)}_controller.coffee"
+        from: 'router.coffee'
+        to: "client/routers/#{inflect.underscore(router)}_router.coffee"
         data:
             app: app
-            ctrl: ctrl
-            route: (if ctrl.toLowerCase() is 'root' then '' else "/#{inflect.underscore(ctrl)}")
+            router: router
+            route: (if router.toLowerCase() is 'root' then '' else "/#{inflect.underscore(router)}")
             
 @restful = (app, model) ->
     model = inflect.camelize(model)
@@ -204,4 +204,4 @@ subfolder = (param) ->
     @view(app, models)
     @template("#{models}/layout")
     @template("#{models}/index")
-    @controller(app,models)
+    @router(app,models)

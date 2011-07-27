@@ -1,5 +1,6 @@
 parser = require('uglify-js').parser
 uglify = require('uglify-js').uglify
+css = require('uglifycss')
 
 @mangle = (data, except) ->
     data = parser.parse(data)
@@ -15,3 +16,6 @@ uglify = require('uglify-js').uglify
 @parse = (data) ->
     data = parser.parse(data)
     return uglify.gen_code(data,{ascii_only: true})
+    
+@css = (data) ->
+    return css.processString(data)

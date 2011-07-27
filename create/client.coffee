@@ -1,14 +1,13 @@
 app = window['<%= @app %>'] = {}
 
 app.Collections = {}
-app.Controllers = {}
-app.Helpers = {}
 app.Models = {}
+app.Routers = {}
 app.Templates = {}
 app.Views = {}
                
 $(document).ready ->
-    # creates instances of the controllers but Root. (will initialize the Root later.)
-    (app.Controllers[k] = new controller if k isnt 'Root') for k,controller of app.Controllers
-    app.Controllers.Root = new app.Controllers.Root
+    # creates instances of the routers but Root. (will initialize the Root later.)
+    (app.Routers[k] = new router if k isnt 'Root') for k,router of app.Routers
+    app.Routers.Root = new app.Routers.Root
     Backbone.history.start()

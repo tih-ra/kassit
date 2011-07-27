@@ -1,23 +1,30 @@
 {
-    "name": "kassit"
-,   "description": "Kassit - Metaframework for rapid building of AJAX client-side WebApplications"
-,   "author": "Amit Marcus"
-,   "version": "0.1.1"
+    "name":         "kassit"
+,   "description":  "Kassit - Rapid Client-Side AJAX Applications Development Framework"
+,   "author":       "Amit Marcus"
+,   "version":      "0.1.2"
 ,   "licenses": [
         {
             "type": "MIT"
-,           "url": "https://github.com/marxus85/kassit/raw/master/LICENSE"
+,           "url":  "https://github.com/marxus85/kassit/raw/master/LICENSE"
         }
     ]
 ,   "repository": {
         "type": "git"
-,       "url": "git://github.com/marxus85/kassit.git"
+,       "url":  "git://github.com/marxus85/kassit.git"
     }
 ,   "main": "./lib/kassit.js"
 ,   "bin": {
         "kassit": "./bin/kassit"
     }
 ,   "dependencies": {
+        "coffee-script":    "1.1.1"
+,       "eco":              "1.1.0-rc-1"
+,       "express":          "2.4.3"
+,       "inflect":          "0.1.0"
+,       "less":             "1.1.4"
+,       "uglify-js":        "1.0.6"
+,       "uglifycss":        "0.0.3"
     }
 ,   "devDependencies": {
     }

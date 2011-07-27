@@ -1,4 +1,4 @@
-express = require('express')
+express = require('kassit/node_modules/express')
 app = <%= @app %> = process['<%= @app %>'] = express.createServer()
 app.mode = if !(getMode?()) then 'prod' else getMode()
 app.port = 3000

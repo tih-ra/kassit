@@ -1,5 +1,5 @@
 fs = require('fs')
-walk = require('walk')
+#walk = require('walk')
 
 class @Watcher
     constructor: (path) ->
@@ -12,15 +12,15 @@ class @Watcher
     stop: ->
         @watching = false
  
-    getFiles: (func) ->
-        files = []
-        walker = walk.walk @path, { followLinks: false }
-        walker.on 'file', (root, stat, next) ->
-            files.push(root + '/' + stat.name)
-            next()
-            
-        walker.on 'end', ->
-            func(files)
+    #getFiles: (func) ->
+    #    files = []
+    #    walker = walk.walk @path, { followLinks: false }
+    #    walker.on 'file', (root, stat, next) ->
+    #        files.push(root + '/' + stat.name)
+    #        next()
+    #        
+    #    walker.on 'end', ->
+    #        func(files)
     
     initFiles: (files) =>
         @fileAdded(file) for file in files

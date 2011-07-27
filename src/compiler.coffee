@@ -48,7 +48,7 @@ class @Compiler
     ejs: (input,data) -> return [@wrapTemplate(JSON.stringify(data), @getTmplName(input), 'ejs'),'js']
     tmpl: (input, data) -> return [@wrapTemplate(JSON.stringify(data), @getTmplName(input), 'tmpl'),'js']
     kup: (input, data) -> return [@wrapTemplate(JSON.stringify("function(){#{uglifier.squeeze(coffee.compile(data,{bare:true}))}}"), @getTmplName(input), 'kup'),'js']
-    css: (input, data) -> @less(input, data)
+    css: (input, data) -> return [data,'css']
     less: (input, data) ->
-        less.render data, (err, css) => data = css
+        less.render data, (err, css) => if err then throw err else data = css
         return [data,'css']

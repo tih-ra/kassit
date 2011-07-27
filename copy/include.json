@@ -11,7 +11,7 @@
 ,       { "url": "templates/root/layout.kup" }
 ,       { "url": "templates/root/index.kup" }
 ,       { "url": "views/root_view.coffee" }
-,       { "url": "controllers/root_controller.coffee" }
+,       { "url": "routers/root_router.coffee" }
 ,       { "url": "style/master.less" }
     ]
 ,   "server": [
