@@ -1,6 +1,6 @@
 # Kassit
 
-  Rapid Client-Side AJAX Applications Development Framework
+  Rapid Client-Side AJAX Applications Development Framework  
   mainly built and depends on [Node.JS](http://nodejs.org), [CoffeeScript](http://jashkenas.github.com/coffee-script/) and [Backbone](http://http://documentcloud.github.com/backbone/)
   
   Kassit is named after a popular 70's coffeeshop in Tel-Aviv (knowned as a gathering place for intellectuals - mostly poets)
