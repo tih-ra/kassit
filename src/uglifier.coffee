@@ -17,5 +17,8 @@ css = require('uglifycss')
     data = parser.parse(data)
     return uglify.gen_code(data,{ascii_only: true})
     
+@none = (date) ->
+    return date
+
 @css = (data) ->
     return css.processString(data)
