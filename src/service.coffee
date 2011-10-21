@@ -42,7 +42,7 @@ writer = require('kassit/lib/writer')
     
         # writing the production css
         if (env is 'client') and (styles.length)
-            writer.writeFile prodcss, styles.join(' '), (err) ->
+            writer.writeFile prodcss, styles.join(' ').replace(/{/g,' {').replace(/}/g,'} '), (err) ->
                 if err then console.log "  ::error: #{prodcss}" else console.log "  ::compiled: #{prodcss}"
     
     console.log '\n'

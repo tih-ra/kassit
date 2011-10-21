@@ -2,7 +2,7 @@
     "name":         "kassit"
 ,   "description":  "Kassit - Rapid Client-Side AJAX Applications Development Framework"
 ,   "author":       "Amit Marcus"
-,   "version":      "0.1.3"
+,   "version":      "0.1.4"
 ,   "licenses": [
         {
             "type": "MIT"
