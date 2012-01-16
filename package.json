@@ -20,7 +20,7 @@
 ,   "dependencies": {
         "coffee-script":    "1.1.1"
 ,       "eco":              "1.1.0-rc-1"
-,       "express":          "2.4.3"
+,       "express":          "2.5.0"
 ,       "inflect":          "0.1.0"
 ,       "less":             "1.1.4"
 ,       "uglify-js":        "1.0.6"
